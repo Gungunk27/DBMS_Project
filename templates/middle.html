@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static',filename='middle.css')}}"/>
+        <title>
+            Middle page
+        </title>
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+     
+         
+        <h1> Welcome {{ name }}</h1>
+        <div id="line">
+            <hr>
+        <div class="container">
+            <div class="box1">
+                <h1> Donate Blood</h1>
+                <p> Be a donor and save life.
+                    Donors, especially those who donate regularly, keep our nation's blood supply stable.
+                </p>
+                <form action="{{url_for('donate')}}">
+                    <button type="submit" id="button1">Donate Blood</button>
+                </form>
+            </div>
+            <div class="box2">
+                <h1> Need Blood</h1>
+                <p> We are here to save lives. 
+                    There are many people who are in need and we help them by connecting to our server.
+                </p>
+                <form action="{{url_for('needblood')}}">
+                    <button type="submit" id="button2">Need Blood</button>
+                </form>
+            </div>
+        </div>
+
+    </body>
+</html>

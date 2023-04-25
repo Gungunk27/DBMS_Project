@@ -1,0 +1,131 @@
+nav {
+  background: radial-gradient(ellipse farthest-corner at left top,#a03030 30%,  #f35454 100%);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.logo img {
+  max-height: 50px;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+.pages {
+  display: flex;
+  align-items: center;
+}
+
+.pages ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+}
+
+.pages li {
+  margin-left: 20px;
+}
+
+.pages li:first-child {
+  margin-left: 0;
+}
+
+.pages li a {
+  text-decoration: none;
+  color: #111010;
+  font-weight: bold;
+  font-size: large;
+  padding: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.pages li a:hover {
+  background-color: #efe0e1;
+  color: black;
+}
+
+.burger {
+  align-items: center;
+  margin-right: 20px;
+}
+
+.burger img {
+  max-height: 50px;
+}
+
+.burger img:hover {
+  transform: scale(1.1);
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  background-color: White;
+}
+
+.menu li {
+  margin: 10px 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #111010;
+  font-weight: bold;
+  font-size: large;
+  padding: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.menu a:hover {
+  background-color: #e62d39;
+  color: black;
+}
+
+@media screen and (min-width: 768px) {
+  .burger {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .burger img {
+    max-height: 40px;
+  }
+
+  .burger:hover .menu {
+    display: block;
+  }
+  
+  .pages ul {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    position: absolute;
+    background-color: #d31919f3;
+  }
+
+  .pages li {
+    margin: 10px 0;
+  }
+
+  .show {
+    display: flex !important;
+  }
+}

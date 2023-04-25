@@ -1,0 +1,42 @@
+<nav>
+  <link rel="stylesheet" href="{{url_for('static',filename='navbar.css')}}"/>
+
+  <div class="burger">
+    <a href="#" class="burger-link" onclick="toggleMenu()">
+      <img src={{url_for('static',filename='images/burger.png')}} alt="Burger menu">
+    </a>
+  </div>
+  
+  <div class="menu">
+    <ul>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('login') }}">Login/Signup</a></li>
+      <li><a href="{{ url_for('wwdb') }}">Why we donate blood?</a></li>
+      <li><a href="#">Contact us</a></li>
+    </ul>
+  </div>
+  
+  <script>
+    function toggleMenu() {
+      var dropdownMenu = document.querySelector('.menu');
+      dropdownMenu.classList.toggle('show');
+    }
+  </script>
+  
+  <div class="navbar-container">
+    <div class="logo">
+      <img src="{{url_for('static',filename='images/try.png')}}" alt="Our Logo">
+    </div>
+    <div class="menu-icon">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="pages">
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('signup') }}">Login/Signup</a></li>
+        <li><a href="{{ url_for('wwdb') }}">Why we donate blood?</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

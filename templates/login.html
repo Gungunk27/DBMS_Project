@@ -1,0 +1,48 @@
+{% include 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='all.css')}}"/>
+    <title>Login</title>
+   
+</head>
+<body>
+    
+    
+
+    <div class="form-container">
+        <h1>Login</h1>
+        
+    <form action="{{ url_for('login')}}" method="POST">
+        <label > User ID:</label>
+        <input  type="number" name="id" >
+     
+        <br>
+
+        <label for="email">Email:</label>
+        <input  type="email" name="email" >
+        <br>
+        <label for="pwd">Password:</label>
+        <input  type="password" name="password" >
+        <br>
+        {% with messages = get_flashed_messages() %}  
+        {% if messages %}  
+              <!-- {% for message in messages %}   -->
+                   <h5>{{ message }}</h5> 
+              <!-- {% endfor %}   -->
+        {% endif %}  
+     {% endwith %} 
+        <button type="submit">Login</button>
+        <br>
+        <a href="{{ url_for('signup') }}">Don't have an account? Signup</a>
+    </div>
+        
+
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,71 @@
+{% include 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home - Blood Bank Management System</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+	<div class="container">
+		<p id="para">
+			<h1>Welcome to Blood Bank</h1>
+			<div id="line">
+				<hr>
+			</div>
+			<p> Blood Bank is a platform where you can register as a blood donor and search for blood donors by blood group. </p>
+
+			<div class="box-container">
+				<div class="box">
+					<p class="bloodgroup-availability">Active Donors:{{ message['donars'] }} </p>
+
+				  <!-- {% if message %}
+					<p>{{ message['donors'] }}</p>
+				  {% endif %} -->
+				</div>
+				<div class="box">
+				   <p class="bloodgroup-availability">Blood Requests: {{ message1['needers'] }}</p>
+
+			    </div>
+			  </div>
+
+			<p>
+				<h2> Who can Donate Blood?</h2>
+				Most people can give blood if they are in good health.
+				<h4>Compatible Blood Type Donors</h4>
+				<div class="home" id="img">
+					<img src="{{ url_for('static', filename='images/Blood-compatibility.png') }}" alt="Blood-compatibility" width="400" height="400" align="center">
+				</div>
+				<h3>What makes you Eligible:</h3>
+				<ul>
+					<li>Any donor, who is healthy, fit and not suffering from any transmittable diseases can donate blood.</li>
+					<li>The Donor must be 18-60 years age and should weigh minimum 50 kgs.</li>
+					<li>The Donor’s Haemoglobin level must be 12.5g/dl minimum.</li>
+					<li>A donor can again donate blood after 3 months of the last donation.</li>
+					<li>Pulse rate must be between 50 to 100mm without any irregularities.</li>
+					<li>Blood Pressure Diastolic 50 to 100 mm Hg and Systolic 100 to 180 mm Hg.</li>
+					<li>Body temperature should be normal.</li>
+				</ul>
+				<h3>What makes you Non-Eligible:</h3>
+				<ul>
+					<li>Patients of cardiac arrest, hypertension, kidney disease or epilepsy.</li>
+					<li>Consumption of alcohol within the last 24 hours.</li>
+					<li>HIV + status</li>
+					<li>Having a cold, flu, sore throat, or any other infection.</li>
+					<li>Pregnant women and breastfeeding mothers cannot donate blood.</li>
+				</ul>
+			</p>
+		</p>
+	</div>
+
+	<footer>
+		<div class="footer-content">
+			<p id="reach"> 
+				2023 @Blood Bank system <br>
+			</p>
+		</div>
+	</footer>
+</body>
+</html>
